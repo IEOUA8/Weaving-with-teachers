@@ -14,6 +14,7 @@ Revisión local: 24 de septiembre de 2026. Este control separa lo implementado y
 | Acceso | Implementado | Sin registro, inicio de sesión, perfil ni almacenamiento de resultados personales |
 | Audio | Pendiente del cliente | Controles deshabilitados y alternativas visuales o rítmicas disponibles |
 | Publicación técnica | Disponible para revisión | `https://weaving-with-teachers.vercel.app`; no equivale a aprobación pedagógica o editorial final |
+| Integración continua | Configurada | Los cambios enviados a `main` en GitHub generan un despliegue de producción en Vercel |
 
 ## Criterios de experiencia verificados
 

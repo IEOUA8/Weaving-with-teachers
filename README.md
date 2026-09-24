@@ -48,7 +48,7 @@ npm run dev -- --host 127.0.0.1
 
 ## Despliegue
 
-El proyecto está vinculado localmente a Vercel como `weaving-with-teachers`. `vercel.json` conserva el acceso directo a las rutas internas de React sin redirigir los recursos estáticos. Mientras la integración automática de GitHub permanezca pendiente, los despliegues de producción se ejecutan explícitamente con `vercel --prod --yes`.
+El proyecto está vinculado a Vercel como `weaving-with-teachers` y conectado con `IEOUA8/Weaving-with-teachers`. Cada actualización de `main` genera un despliegue de producción. `vercel.json` conserva el acceso directo a las rutas internas de React sin redirigir los recursos estáticos.
 
 ## Validación
 
