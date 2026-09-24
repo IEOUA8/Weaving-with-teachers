@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vite/
+.DS_Store
+
+# Material fuente del cliente: conservar fuera del repositorio publico.
+*.docx
+*.pptx
+*.pdf
