@@ -10,7 +10,8 @@ Este documento reúne las decisiones y materiales que necesitamos confirmar con 
 - [x] La interfaz funciona sin registro, perfil, cámara, micrófono ni almacenamiento de resultados personales.
 - [x] Las actividades con audio pendiente cuentan con lectura, ritmo visual o movimiento como alternativa provisional.
 - [ ] Realizar revisión formal del cliente sobre pedagogía, inglés, ilustraciones, derechos y alcance de publicación.
-- [ ] Definir infraestructura y autorizar una publicación; el estado actual es local y no está desplegado.
+- [x] Crear una publicación técnica provisional en Vercel para revisión funcional.
+- [ ] Autorizar la publicación final, definir el dominio definitivo y aprobar el uso público del contenido.
 
 ## 1. Decisiones prioritarias para cerrar el MVP
 

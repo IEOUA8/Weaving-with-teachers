@@ -13,7 +13,7 @@ Revisión local: 24 de septiembre de 2026. Este control separa lo implementado y
 | Navegación | Implementado | Anterior/siguiente en fichas, continuidad entre unidades y cierre de cada ruta |
 | Acceso | Implementado | Sin registro, inicio de sesión, perfil ni almacenamiento de resultados personales |
 | Audio | Pendiente del cliente | Controles deshabilitados y alternativas visuales o rítmicas disponibles |
-| Publicación | No realizada | Falta definir infraestructura, responsables y autorización de salida |
+| Publicación técnica | Disponible para revisión | `https://weaving-with-teachers.vercel.app`; no equivale a aprobación pedagógica o editorial final |
 
 ## Criterios de experiencia verificados
 
@@ -27,6 +27,7 @@ Revisión local: 24 de septiembre de 2026. Este control separa lo implementado y
 - Los cambios de pantalla actualizan el título del documento y cuentan con anuncio accesible.
 - La vista de 320 px no presenta desplazamiento horizontal en el cierre de ruta revisado.
 - La consola del navegador no reportó errores durante el recorrido comprobado.
+- La portada, las rutas profundas de React y los recursos visuales responden directamente desde el alias de producción.
 
 ## Verificación técnica ejecutada
 
@@ -46,8 +47,8 @@ Resultado: compilación correcta y 45 pruebas superadas. Las pruebas incluyen tr
 4. Entrega o aprobación de audios, canciones, locución, acento y derechos de uso.
 5. Resolución escrita de las discrepancias registradas en `TRAZABILIDAD_PEDAGOGICA.md`.
 6. Definición de autoría, créditos, privacidad, términos, analítica y jurisdicción.
-7. Definición de dominio, hosting, navegadores objetivo y necesidad de funcionamiento sin conexión.
-8. Autorización explícita de publicación y responsables de aprobación final.
+7. Definición del dominio definitivo, navegadores objetivo y necesidad de funcionamiento sin conexión. Vercel funciona como hosting técnico provisional.
+8. Autorización explícita para presentar la versión como publicación final y responsables de aprobación.
 
 ## Protocolo recomendado de aceptación
 

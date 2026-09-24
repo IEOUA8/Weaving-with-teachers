@@ -2,6 +2,8 @@
 
 Interfaz React/Vite para consultar vocabulario y actividades metodológicas de inglés dirigidas a agentes educativos de centros educativos del municipio de Envigado.
 
+Versión técnica pública: [weaving-with-teachers.vercel.app](https://weaving-with-teachers.vercel.app). Esta URL permite revisión funcional, pero no representa todavía la aprobación pedagógica ni editorial final del cliente.
+
 ## Decisiones confirmadas
 
 - El nombre oficial del producto es **Weaving with teachers**.
@@ -43,6 +45,10 @@ Las fuentes actuales son Pacifico para el wordmark, Nunito para jerarquías y So
 npm install
 npm run dev -- --host 127.0.0.1
 ```
+
+## Despliegue
+
+El proyecto está vinculado localmente a Vercel como `weaving-with-teachers`. `vercel.json` conserva el acceso directo a las rutas internas de React sin redirigir los recursos estáticos. Mientras la integración automática de GitHub permanezca pendiente, los despliegues de producción se ejecutan explícitamente con `vercel --prod --yes`.
 
 ## Validación
 
