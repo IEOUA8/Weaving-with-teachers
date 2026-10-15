@@ -9,29 +9,25 @@ Versión técnica pública: [weaving-with-teachers.vercel.app](https://weaving-w
 - El nombre oficial del producto es **Weaving with teachers**.
 - Tejiendo Sueños es una referencia visual; no aparece como segunda marca ni como cobranding.
 - La experiencia es abierta: no tiene registro, inicio de sesión, perfiles ni almacenamiento de datos personales.
-- Las rutas principales son **Investigadores** y **Constructores**.
-- Ambas rutas comparten exactamente el mismo vocabulario.
-- Las actividades cambian por ruta y conservan su guía y diapositiva de origen.
+- Desde la portada se elige una de las dos rutas definidas por las guías: **Investigadores** o **Constructores**.
+- Cada ruta contiene los cinco temas: **Colors, Days, Feelings, Food y Nature**.
+- El título de cada tema y cada palabra se presenta primero en inglés; la traducción en español funciona como apoyo secundario.
+- Las 47 actividades conservan su ruta, guía y diapositiva de origen; no se convierten en niveles ni prácticas digitales separadas.
 
 ## Arquitectura de la interfaz
 
-- `/`: bienvenida y elección de ruta.
-- `/ruta/:ruta`: mapa pedagógico de las cinco unidades y progresión orientativa de la ruta.
-- `/ruta/:ruta/unidad/:tema`: unidad con vocabulario contextual y actividades en el orden de la guía.
-- `/ruta/:ruta/vocabulario`: 44 palabras compartidas, organizadas en cinco temas, con apoyo visual y vista ampliada navegable.
-- `/ruta/:ruta/actividades`: índice metodológico completo, agrupado por unidad.
-- `/ruta/:ruta/actividad/:tema/:actividad`: ficha metodológica trazable.
-- `/ruta/:ruta/actividad/:tema/:actividad/practica`: adaptación pedagógica virtual de cada actividad.
+- `/`: bienvenida y elección entre Investigadores y Constructores.
+- `/ruta/:ruta`: elección de uno de los cinco temas dentro de la ruta.
+- `/ruta/:ruta/unidad/:tema`: título bilingüe, vocabulario visual, audio de pronunciación y únicamente las actividades sugeridas para la ruta elegida.
+- Las URLs anteriores de actividades redirigen a la unidad correspondiente; la antigua URL sin ruta vuelve al inicio porque no permite determinar si corresponde a Investigadores o Constructores.
 
-El mapa recomienda una secuencia sin bloquear unidades ni convertir las actividades en niveles obligatorios. Reúne 47 actividades con interacción en pantalla: 25 para Investigadores y 22 para Constructores. Cada práctica conserva la guía y diapositiva fuente, objetivo, materiales, vocabulario, facilitación, alternativa de acceso y cierre.
+La revisión del cliente del 5 de octubre de 2026 pidió reducir la cantidad de decisiones y clics. Se retiraron la progresión Reconocer–Imitar–Asociar–Nombrar, la biblioteca separada, los filtros, las fichas intermedias y los cuestionarios digitales. Las rutas Investigadores y Constructores se mantienen porque sí estructuran las actividades en las cinco guías metodológicas.
 
-Cada ruta funciona además como una secuencia continua: las fichas permiten avanzar o retroceder entre actividades, el cierre de una unidad enlaza con la primera actividad de la siguiente y la última práctica identifica el final del recorrido. Esta navegación no implica seguimiento del participante ni progreso almacenado.
-
-Las cinco unidades y sus 47 actividades cuentan con adaptación pedagógica detallada. El sistema distingue búsqueda, exploración sensorial, ritmo, creación, cuento, comandos, construcción, expresiones, memoria, juego simbólico, asociación visual, turnos con dado y elección personal. La interfaz prepara y acompaña la actividad; las acciones físicas, táctiles y creativas siguen ocurriendo con el agente educativo.
+Las actividades aparecen debajo del vocabulario con su nombre original, objetivo, desarrollo y consigna trazables a la guía. No se presentan materiales, pasos de pantalla, evaluaciones ni niveles añadidos por la aplicación.
 
 ## Audio
 
-Los controles de audio permanecen deshabilitados y rotulados como pendientes. Se habilitarán cuando el cliente entregue o apruebe las grabaciones y canciones definitivas.
+Cada una de las 44 entradas tiene un archivo local de pronunciación en inglés. Las canciones y piezas musicales de las actividades continúan pendientes de entrega o aprobación; no se confunden con el audio de vocabulario.
 
 ## Identidad visual
 
@@ -58,11 +54,11 @@ npm run test:curriculum
 npm run build
 ```
 
-Las 45 pruebas verifican las fuentes, pertenencia de actividades a su ruta, orden por unidad, continuidad entre las 47 actividades, formas de participación, diapositivas, respuestas, diferencias entre rutas, memoria de cinco tarjetas, vocabulario compartido y cobertura visual de las 44 flashcards.
+Las 47 pruebas verifican fuentes, pertenencia, orden independiente de las 47 actividades, diapositivas, vocabulario, categorías de actividad y cobertura visual. La revisión responsive vigente incluye 390 px sin desbordamiento horizontal, imágenes cargadas, audio reproducible y consola sin errores.
 
 ## Límites actuales
 
 - No existe backend, CMS, analítica, sincronización, cuentas ni progreso persistente.
 - La dirección de las ilustraciones generadas con IA está aprobada para uso transversal. Las 44 flashcards ya tienen apoyo visual y una vista ampliada accesible; esperan aprobación pedagógica final del cliente.
-- Las voces del navegador no sustituyen grabaciones aprobadas.
+- Las pronunciaciones locales funcionan como recurso provisional y requieren aprobación lingüística y de voz antes de considerarse material definitivo.
 - El personaje y los recursos institucionales definitivos necesitan sus archivos fuente autorizados; no se reconstruyeron desde capturas.

@@ -30,15 +30,15 @@ Este documento reúne las decisiones y materiales que necesitamos confirmar con 
 - [x] No se requiere segmentación por rango de edad para Constructores.
 - [ ] Explicar qué diferencia pedagógica determina que un niño use una ruta u otra.
 - [ ] Confirmar si la ruta la elige libremente la familia/docente o si debe existir una recomendación inicial.
-- [x] La experiencia funcionará como guía pedagógica virtual y digital con interacción directa en pantalla.
+- [x] La experiencia funcionará como consulta web de vocabulario y actividades, sin convertir las guías en ejercicios o evaluaciones en pantalla.
 
 ### Alcance de las actividades
 
-- [x] Extender la adaptación pedagógica a las 47 actividades de las cinco guías.
-- [x] Implementar las 37 actividades que antes figuraban únicamente como referencias.
+- [x] Organizar las 47 actividades de las cinco guías según su ruta y tema.
+- [x] Incluir las 47 actividades con nombre, objetivo, desarrollo y consigna trazables.
 - [x] Conservar todos los formatos fuente: búsqueda, tacto, movimiento, pintura, memoria, emparejamiento, construcción, cuento y canción.
 - [ ] Confirmar si las acciones físicas deben realizarse siempre con acompañante o si algunas pueden plantearse para uso individual.
-- [ ] Definir qué evidencia espera el cliente al finalizar una actividad: confirmación del participante, validación del acompañante, respuesta en pantalla u otra opción.
+- [x] La versión actual no solicita evidencia, confirmación ni respuesta al finalizar una actividad.
 - [ ] Aprobar las alternativas accesibles propuestas para niños que no puedan desplazarse, saltar, manipular objetos o representar gestos.
 
 ### Contenido que requiere normalización pedagógica
@@ -63,7 +63,7 @@ Este documento reúne las decisiones y materiales que necesitamos confirmar con 
 
 ### Audio, canciones y voz
 
-- [x] El audio de vocabulario, instrucciones y canciones queda pendiente de generación y entrega por el cliente.
+- [x] La pronunciación provisional del vocabulario está disponible; las instrucciones, canciones y voces finales siguen pendientes de aprobación o entrega.
 - [ ] Definir variante de inglés o acento de referencia.
 - [ ] Entregar grabaciones finales o aprobar la contratación/producción de locución.
 - [ ] Confirmar cuáles canciones de las guías se pueden publicar y quién posee sus derechos.
@@ -99,7 +99,7 @@ La ausencia de registro e inicio de sesión ya está definida. La versión actua
 - [ ] Confirmar si debe existir una opción visible para borrar el progreso local.
 - [ ] Definir si docentes o familias necesitan observar resultados. Sin identificación, la plataforma no puede atribuir el progreso a una persona concreta.
 - [x] La plataforma funcionará como guía pedagógica pública y digital; no se requiere panel administrativo en esta fase.
-- [ ] Definir si la biblioteca y las actividades estarán completamente abiertas y gratuitas.
+- [x] El vocabulario y las actividades están abiertos y no requieren cuenta.
 
 ## 4. Contexto de uso y requisitos técnicos
 

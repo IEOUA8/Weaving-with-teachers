@@ -4,8 +4,45 @@ import { existsSync } from 'node:fs'
 import { units, vocabularyTranslations } from '../src/data/curriculum.ts'
 import { investigatorLessons, builderLessons, getLesson, guideSources } from '../src/data/lessons.ts'
 import { colorHex } from '../src/data/lessons.ts'
-import { activitiesForRoute, activityModeLabels, activitySequence } from '../src/data/activities.ts'
+import { activitiesForRoute, activityModeLabels, activitySequence, activitySourceLabels } from '../src/data/activities.ts'
 import { dayNumber, generatedVocabularyIllustration } from '../src/data/visuals.ts'
+
+const sourceActivityOrder = {
+  investigadores: {
+    colores: [
+      [8, 'Color Hunt Natural'], [9, 'Touch & Feel Colors'], [10, 'Color Song + Movement'], [11, 'Magic Color Painting'], [12, 'The Color Tree'],
+    ],
+    dias: [
+      [7, 'The Daily Color Hunt'], [8, 'Touch & Feel the Day'], [9, 'The Movement Song'], [10, 'Magic Day Painting'], [11, 'The Visitor'],
+    ],
+    emociones: [
+      [7, 'Happy Train'], [8, 'Feel and Say'], [9, 'Mirror Feelings'], [10, 'Feelings Circle Time'], [11, 'Draw Your Feelings'],
+    ],
+    alimentos: [
+      [7, "What's Missing?"], [8, 'Feed the Monster'], [9, 'Food Hunt'], [10, 'Picnic Time'], [11, 'Come and Eat with Me'],
+    ],
+    naturaleza: [
+      [7, 'Nature Hunt'], [8, 'Nature Moves'], [9, 'My Nature Picture'], [10, 'Hello, Nature!'], [11, "Little Seed's Day"],
+    ],
+  },
+  constructores: {
+    colores: [
+      [14, 'Color Commands Game'], [15, 'Build With Colors'], [16, 'Color + Texture Lab'], [17, 'The Little Colors'], [18, 'Color + Object Creation'],
+    ],
+    dias: [
+      [13, 'Daily Commands Game'], [14, 'Build the Week Tower'], [15, 'The Feel of the Day'], [16, "The Traveler's Week"], [17, 'Object Creation Lab'],
+    ],
+    emociones: [
+      [13, 'Feeling Charades'], [14, 'Feeling Dice'], [15, 'Feelings Dance'], [16, 'My Feeling Today'],
+    ],
+    alimentos: [
+      [13, 'Food Market'], [14, 'Food Memory Walk'], [15, 'Match the Picnic'], [17, 'Yummy Food Song'],
+    ],
+    naturaleza: [
+      [13, 'Nature Commands'], [14, 'Build a Nature Scene'], [15, 'What Is Missing?'], [16, 'Nature, Move With Me!'],
+    ],
+  },
+}
 
 for (const unit of units) {
   test(`${unit.name}: fuente existente y catálogo trazable`, () => {
@@ -106,6 +143,25 @@ test('El mapa conserva el orden de cada guía y clasifica la forma de participac
   }
 })
 
+test('El orden visible coincide con una matriz independiente extraída de las diapositivas', () => {
+  for (const route of ['investigadores', 'constructores']) {
+    for (const unit of units) {
+      const actual = activitiesForRoute(route)
+        .filter(activity => activity.unit.id === unit.id)
+        .map(activity => [activity.slide, activity.name])
+      assert.deepEqual(actual, sourceActivityOrder[route][unit.id])
+    }
+  }
+})
+
+test('Los títulos conservan las categorías explícitas de cuentos, canciones y laboratorios', () => {
+  assert.equal(activitySourceLabels['The Color Tree'], 'Mini cuento')
+  assert.equal(activitySourceLabels['The Feel of the Day'], 'Texture Lab')
+  assert.equal(activitySourceLabels['Come and Eat with Me'], 'Song')
+  assert.equal(activitySourceLabels['Hello, Nature!'], 'Canción para Investigadores')
+  assert.equal(activitySourceLabels['Nature, Move With Me!'], 'Canción para Constructores')
+})
+
 test('La navegación enlaza todas las actividades de cada ruta sin cortes entre unidades', () => {
   for (const route of ['investigadores', 'constructores']) {
     const activities = activitiesForRoute(route)
@@ -128,6 +184,8 @@ test('Colores utiliza dinámicas digitales diferenciadas en ambas rutas', () => 
   assert.deepEqual(builderPatterns, ['commands', 'construction', 'sensory', 'story', 'creation'])
   const colorLessons = [...activitiesForRoute('investigadores'), ...activitiesForRoute('constructores')].filter(activity => activity.unit.id === 'colores').map(activity => activity.lesson)
   assert.ok(colorLessons.every(lesson => lesson?.interactionCues?.length >= 3), 'Cada actividad de Colores debe exponer su secuencia propia')
+  assert.deepEqual(getLesson('colores', 'investigadores', 'Touch & Feel Colors').interactionCues, ['La docente presenta un material: “Red paint”', 'Los niños tocan, aplastan y sienten', 'Se repite el color mientras manipulan'])
+  assert.deepEqual(getLesson('colores', 'constructores', 'Color + Texture Lab').interactionCues, ['La docente muestra una hoja: “This is green”', 'Los niños tocan y comparan los materiales', 'Se refuerza color + sensación'])
   assert.equal(getLesson('colores', 'investigadores', 'Color Song + Movement').resourceStatus, 'client-pending')
 })
 
@@ -150,12 +208,15 @@ test('Emociones distingue vocabulario, expresión y elección personal', () => {
   assert.deepEqual(investigatorPatterns, ['rhythm', 'sensory', 'expression', 'rhythm', 'creation'])
   assert.deepEqual(builderPatterns, ['expression', 'chance', 'rhythm', 'reflection'])
   const feelingLessons = [...activitiesForRoute('investigadores'), ...activitiesForRoute('constructores')].filter(activity => activity.unit.id === 'emociones').map(activity => activity.lesson)
-  assert.ok(feelingLessons.every(lesson => lesson?.interactionCues?.length === 4), 'Cada actividad de Emociones debe exponer sus cuatro momentos')
+  assert.ok(feelingLessons.every(lesson => lesson?.interactionCues?.length >= 4), 'Cada actividad de Emociones debe exponer la secuencia indicada en su diapositiva')
   assert.equal(getLesson('emociones', 'investigadores', 'Happy Train').resourceStatus, 'client-pending')
   assert.equal(getLesson('emociones', 'investigadores', 'Feelings Circle Time').resourceStatus, 'client-pending')
   assert.equal(getLesson('emociones', 'constructores', 'Feelings Dance').resourceStatus, 'client-pending')
   assert.match(getLesson('emociones', 'investigadores', 'Feel and Say').model, /no fija una emoción correcta/)
   assert.equal(getLesson('emociones', 'constructores', 'My Feeling Today').modelItems.length, 10)
+  assert.ok(getLesson('emociones', 'investigadores', 'Feel and Say').interactionCues.includes('Repite las palabras mientras toca el objeto'))
+  assert.ok(getLesson('emociones', 'investigadores', 'Draw Your Feelings').interactionCues.includes('Muestra el dibujo al grupo'))
+  assert.ok(getLesson('emociones', 'constructores', 'My Feeling Today').interactionCues.includes('Quienes deseen compartir muestran su dibujo'))
   assert.match(getLesson('emociones', 'constructores', 'My Feeling Today').close, /no se almacena/)
 })
 
@@ -173,6 +234,7 @@ test('Alimentos conserva memoria, juego simbólico y la variante duplicada', () 
   const match = getLesson('alimentos', 'constructores', 'Match the Picnic')
   assert.match(match.materials, /diapositiva 16/)
   assert.match(match.close, /no crea una actividad adicional/)
+  assert.ok(match.interactionCues.includes('También se puede realizar con elementos reales'))
   const song = getLesson('alimentos', 'constructores', 'Yummy Food Song')
   assert.equal(song.modelItems.length, 10)
   assert.equal(song.resourceStatus, 'client-pending')

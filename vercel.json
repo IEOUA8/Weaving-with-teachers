@@ -3,6 +3,10 @@
     {
       "source": "/ruta/:path*",
       "destination": "/index.html"
+    },
+    {
+      "source": "/tema/:path*",
+      "destination": "/index.html"
     }
   ]
 }

@@ -232,7 +232,7 @@ const digitalLesson = (seed: LessonSeed): GuidedLesson => ({
 
 const investigatorSeeds: LessonSeed[] = [
   {
-    unit: 'colores', name: 'Touch & Feel Colors', slide: 9, target: 'red', interaction: 'sensory', interactionCues: ['Color', 'Material', 'Sensación'],
+    unit: 'colores', name: 'Touch & Feel Colors', slide: 9, target: 'red', interaction: 'sensory', interactionCues: ['La docente presenta un material: “Red paint”', 'Los niños tocan, aplastan y sienten', 'Se repite el color mientras manipulan'],
     objective: 'Asocia un color con una textura.', materials: 'Plastilina, pintura y papeles de distintas texturas. La pantalla prepara la asociación antes de explorar los materiales.',
     modelItems: ['red', 'blue', 'yellow'], model: 'Presenta un material a la vez y nombra su color. La pantalla anticipa la pareja; la exploración táctil ocurre con el material real.',
     question: '¿Qué color aparece en “Red paint”?', practice: 'Relaciona la frase con su muestra de color antes de tocar, aplastar o sentir el material.', choices: ['blue', 'red', 'yellow', 'green'], answer: 'red',
@@ -304,7 +304,7 @@ const investigatorSeeds: LessonSeed[] = [
     alternative: 'Puedes participar desde tu lugar, mover solo las manos, señalar la tarjeta o pasar el turno.', close: 'Practicaste Happy, Sad, Angry y Scared dentro de la secuencia de Happy Train. La representación no indica necesariamente cómo se siente cada persona.', resourceStatus: 'client-pending',
   },
   {
-    unit: 'emociones', name: 'Feel and Say', slide: 8, target: 'calm', interaction: 'sensory', interactionCues: ['Explora una textura', 'Escucha Happy, Calm o Excited', 'How do you feel?', 'Elige una palabra como modelo'],
+    unit: 'emociones', name: 'Feel and Say', slide: 8, target: 'calm', interaction: 'sensory', interactionCues: ['Explora una textura', 'Escucha Happy, Calm o Excited', 'Repite las palabras mientras toca el objeto', 'How do you feel?', 'La docente modela la respuesta'],
     objective: 'Explora texturas mientras practica vocabulario emocional en inglés.', materials: 'Algodón, plumas, telas suaves, esponjas o pompones. La exploración táctil siempre es opcional.',
     modelItems: ['happy', 'calm', 'excited'], model: 'Presenta un material para observar o tocar y pronuncia Happy, Calm y Excited como vocabulario de práctica. La guía no fija una emoción correcta para cada textura ni permite inferir cómo se siente la persona.',
     question: '¿Qué palabra representa estar en calma?', practice: 'Reconoce calm como palabra de vocabulario antes de explorar el material.', choices: ['excited', 'angry', 'calm', 'surprised'], answer: 'calm',
@@ -320,7 +320,7 @@ const investigatorSeeds: LessonSeed[] = [
     alternative: 'Puedes señalar la acción, hacer un gesto pequeño o escuchar la secuencia sin realizar movimientos.', close: 'Relacionaste cuatro palabras con las acciones propuestas por Feelings Circle Time. El audio final continúa pendiente de aprobación.', resourceStatus: 'client-pending',
   },
   {
-    unit: 'emociones', name: 'Draw Your Feelings', slide: 11, target: 'excited', interaction: 'creation', interactionCues: ['How are you today?', 'Elige una emoción', 'Dibuja una expresión o situación', 'Compartir es opcional'],
+    unit: 'emociones', name: 'Draw Your Feelings', slide: 11, target: 'excited', interaction: 'creation', interactionCues: ['Observa las tarjetas de emociones', 'How are you today?', 'Elige una emoción', 'Dibuja una expresión o personaje', 'Muestra el dibujo al grupo'],
     objective: 'Representa una emoción mediante dibujo y vocabulario en inglés.', materials: 'Hojas, crayones, colores o marcadores.',
     modelItems: ['happy', 'sad', 'angry', 'scared', 'excited', 'proud'], model: 'Repasa las seis tarjetas y formula “How are you today?”. Cada persona puede elegir una emoción para dibujar, usar una emoción ficticia o no compartir información personal.',
     question: '¿Cuál tarjeta corresponde a excited?', practice: 'Reconoce excited antes de iniciar una creación libre.', choices: ['sad', 'calm', 'excited', 'tired'], answer: 'excited',
@@ -403,7 +403,7 @@ const builderSeeds: LessonSeed[] = [
     alternative: 'Puedes señalar el objeto y sustituir el movimiento por una señal acordada. Conserva siempre el orden color y acción.', close: 'Seguiste una instrucción que combina color y movimiento. La docente decide cuándo aumentar la complejidad.',
   },
   {
-    unit: 'colores', name: 'Color + Texture Lab', slide: 16, target: 'green', interaction: 'sensory', interactionCues: ['Hoja + green', 'Arena', 'Plastilina', 'Tela'],
+    unit: 'colores', name: 'Color + Texture Lab', slide: 16, target: 'green', interaction: 'sensory', interactionCues: ['La docente muestra una hoja: “This is green”', 'Los niños tocan y comparan los materiales', 'Se refuerza color + sensación'],
     objective: 'Diferencia colores mediante texturas.', materials: 'Arena, hojas, plastilina y tela.',
     modelItems: ['green', 'yellow', 'red'], model: 'Muestra una hoja y di “This is green”. Luego presenta materiales con sensaciones diferentes para comparar sin imponer una única asociación.',
     question: '¿Qué color nombra la docente al mostrar una hoja?', practice: 'Identifica el color del ejemplo antes de comparar las texturas reales.', choices: ['yellow', 'red', 'green', 'blue'], answer: 'green',
@@ -475,7 +475,7 @@ const builderSeeds: LessonSeed[] = [
     alternative: 'Puedes mover una sola parte del cuerpo, usar una tarjeta, describir el cambio o pasar el turno.', close: 'Exploraste cuatro palabras mediante cambios de movimiento. La participación corporal es adaptable y el audio final sigue pendiente.', resourceStatus: 'client-pending',
   },
   {
-    unit: 'emociones', name: 'My Feeling Today', slide: 16, target: 'calm', interaction: 'reflection', interactionCues: ['Repasa las diez emociones', 'How do you feel today?', 'Dibuja una emoción', 'Compartir es voluntario'],
+    unit: 'emociones', name: 'My Feeling Today', slide: 16, target: 'calm', interaction: 'reflection', interactionCues: ['Repasa las diez emociones', 'How do you feel today?', 'Dibuja una emoción', 'Quienes deseen compartir muestran su dibujo', 'Expresa la emoción con apoyo de la docente'],
     objective: 'Identifica y comunica una emoción con apoyo visual y dibujo.', materials: 'Hojas, colores, crayones y lápices.',
     modelItems: ['happy', 'sad', 'angry', 'scared', 'excited', 'tired', 'sleepy', 'calm', 'surprised', 'proud'], model: 'Repasa las diez palabras mediante gestos y expresiones. Después formula la pregunta de la guía sin exigir una respuesta pública ni conservar información personal.',
     question: '¿Cuál tarjeta representa calm?', practice: 'Reconoce Calm como vocabulario antes de realizar una elección personal.', choices: ['angry', 'calm', 'excited', 'sad'], answer: 'calm',
@@ -491,7 +491,7 @@ const builderSeeds: LessonSeed[] = [
     alternative: 'Puedes observar desde un punto fijo, indicar la dirección o elegir entre dos ubicaciones. La rapidez no se utiliza como criterio.', close: 'Recordaste la ubicación de Orange dentro de Food Memory Walk. La actividad puede repetirse con otras tarjetas y con apoyo gradual.',
   },
   {
-    unit: 'alimentos', name: 'Match the Picnic', slide: 15, target: 'egg', interaction: 'matching', interactionCues: ['Recibe una tarjeta', 'Escucha Egg', 'Busca la imagen igual', 'Forma la pareja y nombra'],
+    unit: 'alimentos', name: 'Match the Picnic', slide: 15, target: 'egg', interaction: 'matching', interactionCues: ['Recibe una tarjeta', 'Escucha Egg', 'Busca la imagen igual', 'Forma la pareja y nombra', 'También se puede realizar con elementos reales'],
     objective: 'Asocia imágenes iguales fortaleciendo la discriminación visual.', materials: 'Dos juegos de flashcards con imágenes realistas. La diapositiva 16 permite usar objetos reales seguros como variante.',
     modelItems: ['egg', 'apple', 'bread', 'milk'], model: 'Coloca un juego de imágenes sobre la manta y distribuye el otro. Compara forma, color y detalles de la tarjeta modelo antes de buscar su pareja idéntica.',
     question: 'Escuchas “Egg”. ¿Qué pareja debes formar?', practice: 'Identifica Egg como la tarjeta modelo antes de buscar la imagen igual.', choices: ['milk', 'egg', 'bread', 'apple'], answer: 'egg',

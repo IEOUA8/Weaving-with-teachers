@@ -66,6 +66,19 @@ const activityModes: Record<string, ActivityMode> = {
   'Nature, Move With Me!': 'movimiento',
 }
 
+export const activitySourceLabels: Partial<Record<string, string>> = {
+  'The Color Tree': 'Mini cuento',
+  'The Little Colors': 'Mini cuento',
+  'The Visitor': 'Mini cuento',
+  'The Feel of the Day': 'Texture Lab',
+  "The Traveler's Week": 'Mini cuento',
+  'Come and Eat with Me': 'Song',
+  'Yummy Food Song': 'Canción',
+  'Hello, Nature!': 'Canción para Investigadores',
+  "Little Seed's Day": 'Mini cuento',
+  'Nature, Move With Me!': 'Canción para Constructores',
+}
+
 export type ActivitySummary = {
   id: string
   name: string
@@ -74,6 +87,7 @@ export type ActivitySummary = {
   slide: number
   status: ActivityStatus
   mode: ActivityMode
+  sourceLabel?: string
   position: number
   totalInUnit: number
   lesson?: GuidedLesson
@@ -98,6 +112,7 @@ export function activitiesForRoute(route: RouteId): ActivitySummary[] {
       slide: slides[index],
       status: 'interactive',
       mode: activityModes[name],
+      sourceLabel: activitySourceLabels[name],
       position: index + 1,
       totalInUnit: names.length,
       lesson: getLesson(unit.id, route, name),

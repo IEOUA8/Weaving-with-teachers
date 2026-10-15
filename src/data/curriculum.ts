@@ -47,8 +47,8 @@ export const units: Unit[] = [
 ]
 
 export const routeCopy: Record<RouteId, { label: string; eyebrow: string; description: string; icon: string }> = {
-  investigadores: { label: 'Investigadores', eyebrow: 'Explorar y reconocer', description: 'Observación, juego, movimiento y descubrimiento guiado.', icon: '⌕' },
-  constructores: { label: 'Constructores', eyebrow: 'Recordar y crear', description: 'Secuencias, consignas y pequeñas producciones acompañadas.', icon: '▦' },
+  investigadores: { label: 'Investigadores', eyebrow: 'Actividades sugeridas', description: 'Exploración sensorial, juego corporal, repetición natural.', icon: '⌕' },
+  constructores: { label: 'Constructores', eyebrow: 'Actividades sugeridas', description: 'Exploración sensorial, juego corporal, repetición natural.', icon: '▦' },
 }
 
 export const unitById = (id: string) => units.find((unit) => unit.id === id) ?? units[0]

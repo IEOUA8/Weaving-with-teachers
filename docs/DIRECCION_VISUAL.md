@@ -65,7 +65,7 @@ Los archivos se encuentran en `public/illustrations/`, con las piezas individual
 ## Interacción y accesibilidad
 
 - Controles principales de al menos 44 px.
-- La vista ampliada usa diálogo nativo, foco inicial en el cierre, salida con `Escape` y controles explícitos para recorrer las tarjetas.
+- Las tarjetas de vocabulario reúnen imagen, palabra, traducción y audio en un solo bloque visible.
 - Foco magenta visible.
 - Contraste AA para texto y acciones.
 - Navegación por teclado y URLs compartibles.
@@ -75,7 +75,7 @@ Los archivos se encuentran en `public/illustrations/`, con las piezas individual
 
 ## Arquitectura visual
 
-La portada conduce a Investigadores o Constructores. Cada ruta abre primero un mapa de cinco unidades; cada unidad reúne vocabulario contextual, secuencia sugerida y acceso a sus fichas. Biblioteca e Índice completo permanecen como herramientas de consulta secundaria. La interfaz evita una navegación infantil genérica y se dirige al agente educativo sin perder el carácter cálido del programa.
+La portada conduce a Investigadores o Constructores. Cada ruta abre los cinco temas y cada tema reúne el vocabulario con sus actividades correspondientes en una sola página. No existen progresión, biblioteca separada, índice, filtros, fichas intermedias ni cuestionarios. La interfaz se dirige al agente educativo sin perder el carácter cálido del programa.
 
 ## Criterio anti-genérico
 
@@ -84,7 +84,7 @@ El barrido visual del 23 de septiembre de 2026 eliminó patrones frecuentes de i
 - no se usan gradientes, glassmorphism ni desenfoques como decoración estructural;
 - no se presentan métricas, porcentajes o insignias de progreso sin datos reales;
 - las unidades y actividades se ordenan mediante líneas, numeración y jerarquía tipográfica, no por una acumulación de tarjetas flotantes;
-- los pills se reservan para cambios de ruta y filtros que sí modifican el contenido;
+- los controles visibles se reservan para decisiones que sí cambian el contenido: ruta, tema y audio;
 - las ilustraciones identifican temas, vocabulario o acciones; no rellenan espacios vacíos;
 - los estados activos se comunican con texto, posición y contraste, no solo con color;
 - el movimiento es corto, sobrio y compatible con `prefers-reduced-motion`.
